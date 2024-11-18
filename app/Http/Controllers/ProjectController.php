@@ -36,10 +36,12 @@ class ProjectController extends Controller
         if (!auth()->user()->is_admin) {
             abort(403);
         }
+
+        // Updated validation to include GIF support
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string',
-            'image' => 'nullable|image|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:5120', // Allow GIFs up to 5 MB
         ]);
 
         if ($request->hasFile('image')) {
@@ -72,10 +74,11 @@ class ProjectController extends Controller
             abort(403);
         }
 
+        // Updated validation to include GIF support
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string',
-            'image' => 'nullable|image|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:5120', // Allow GIFs up to 5 MB
         ]);
 
         if ($request->hasFile('image')) {

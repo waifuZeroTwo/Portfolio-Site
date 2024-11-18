@@ -92,7 +92,18 @@ img {
     opacity: 0;
     animation: fadeIn 1s ease-in-out 0.5s forwards;
 }
-
+/* Ensure all images fit uniformly */
+.project-img {
+    max-width: 100%; /* Prevent image from exceeding its container */
+    max-height: 300px; /* Ensure a uniform height */
+    width: auto; /* Maintain aspect ratio */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Crop the image if needed to fit the container */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional shadow for aesthetics */
+    margin: 0 auto; /* Center image horizontally */
+    display: block; /* Ensure consistent block layout */
+}
 /* Microinteractions */
 @keyframes fadeIn {
     from {

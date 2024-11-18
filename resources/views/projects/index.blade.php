@@ -18,7 +18,7 @@
                 <h2>{{ $project->title }}</h2>
                 <p>{{ $project->description }}</p>
                 @if ($project->image)
-                    <img src="{{ asset('storage/' . $project->image) }}" alt="{{ $project->title }}">
+                    <img src="{{ asset('storage/' . $project->image) }}" alt="{{ $project->title }}" class="project-img">
                 @endif
 
                 <!-- Buttons for Edit and Delete (Visible to Admins) -->
