@@ -1,0 +1,150 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #f4f4f4;
+    background: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #ffa07a;
+    margin-bottom: 10px;
+    animation: slideInFromTop 1s ease-in-out;
+}
+
+/* Form Container */
+form {
+    background: #2a2a2a;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 500px;
+    animation: popIn 0.8s ease-in-out;
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #ffcccb;
+}
+
+form input,
+form textarea,
+form button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #444;
+    border-radius: 8px;
+    outline: none;
+    background: #1a1a1a;
+    color: #f4f4f4;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: #ffa07a;
+    box-shadow: 0 0 5px #ffa07a;
+}
+
+form textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+form button {
+    background: #ffa07a;
+    color: #1a1a1a;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.3s, background 0.3s;
+}
+
+form button:hover {
+    background: #ffcccb;
+    transform: translateY(-3px);
+}
+
+/* Error Messages */
+.errors {
+    background: #5a1e1e;
+    color: #ffcccb;
+    border: 1px solid #ffcccb;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    max-width: 500px;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.errors ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.errors li {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromTop {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

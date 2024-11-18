@@ -1,0 +1,266 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #f4f4f4;
+    background: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #ff5f6d 0%, #ffc371 100%);
+    color: #fff;
+    text-align: center;
+    padding: 2rem 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: slideIn 1s ease-in-out;
+}
+
+.site-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    animation: popIn 0.8s ease-in-out;
+}
+
+.site-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Navigation */
+.nav {
+    margin-top: 1rem;
+    display: flex; /* Ensure buttons are aligned in a row */
+    gap: 10px; /* Add spacing between buttons */
+    justify-content: center;
+}
+
+.nav-link,
+.logout-button {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    transition: background 0.3s, color 0.3s, transform 0.3s;
+    display: inline-block; /* Ensure consistent block-level behavior */
+}
+
+.nav-link:hover {
+    background: #ffc371;
+    color: #1a1a1a;
+    transform: scale(1.1);
+}
+
+/* Main Content */
+.section {
+    padding: 2rem 1rem;
+    text-align: center;
+    background: #2a2a2a;
+    margin: 1rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+.section:nth-child(even) {
+    background: #333;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: #ffa07a;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+.section-title:hover {
+    color: #ffcccb;
+}
+
+.section-text {
+    font-size: 1rem;
+    color: #dcdcdc;
+}
+
+/* Project List */
+.project-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.project {
+    background: #2a2a2a;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+    background: #333;
+}
+
+.project img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+/* Footer */
+.footer {
+    background: #111;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Logout Button */
+.logout-button {
+    background: none;
+    border: 2px solid #fff;
+    color: #fff;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s, transform 0.3s;
+}
+
+.logout-button:hover {
+    background: #ffa07a;
+    color: #1a1a1a;
+    transform: scale(1.1);
+}
+
+/* Project Action Buttons */
+.project-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+    align-items: center;
+}
+
+/* Shared Button Styling */
+.project-actions .button {
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    border: 2px solid #fff;
+    color: #fff;
+    background: none;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s, transform 0.3s;
+}
+
+/* Edit Button */
+.project-actions .edit-button {
+    border-color: #ffa07a;
+}
+
+.project-actions .edit-button:hover {
+    background: #ffa07a;
+    color: #1a1a1a;
+    transform: scale(1.1);
+}
+
+/* Delete Button */
+.project-actions .delete-button {
+    border-color: #ff5f5f;
+}
+
+.project-actions .delete-button:hover {
+    background: #ff5f5f;
+    color: #1a1a1a;
+    transform: scale(1.1);
+}
+
+/* Delete Confirmation Input */
+.delete-form input {
+    padding: 8px;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    background: #2a2a2a;
+    color: #f4f4f4;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    transition: border 0.3s;
+}
+
+.delete-form input:focus {
+    border-color: #ffa07a;
+    outline: none;
+}
+
+/* Delete Form Button */
+.delete-form .delete-button {
+    width: 100%; /* Ensures the delete button aligns neatly with the input */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
