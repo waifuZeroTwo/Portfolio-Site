@@ -19,9 +19,9 @@
                     <button type="submit" class="nav-link logout-button">Logout</button>
                 </form>
 
-                <!-- Link to Add Project (Only for Admin) -->
+                <!-- Link to Manage Tags (Only for Admin) -->
                 @if(Auth::user()->is_admin)
-                    <a href="{{ route('projects.create') }}" class="nav-link">Add Project</a>
+                    <a href="{{ route('tags.index') }}" class="nav-link">Manage Tags</a> <!-- Manage Tags -->
                 @endif
 
                 <!-- Link to Project Index -->

@@ -44,6 +44,16 @@
                 <img src="{{ asset('storage/' . $project->image) }}" alt="{{ $project->title }}" width="150">
             @endif
         </div>
+        <div>
+            <label for="tags">Select Tags:</label>
+            <select name="tags[]" id="tags" multiple>
+                @foreach ($tags as $tag)
+                    <option value="{{ $tag->id }}" {{ in_array($tag->id, old('tags', $project->tags->pluck('id')->toArray() ?? [])) ? 'selected' : '' }}>
+                        {{ $tag->name }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
         <button type="submit">Update Project</button>
     </form>
 </main>

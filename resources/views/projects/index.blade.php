@@ -10,8 +10,32 @@
 <body>
 <header>
     <h1>All Projects</h1>
+    <div class="header-actions">
+        <!-- Back to Home Link -->
+        <a href="{{ route('home') }}" class="button home-button">Back to Home</a>
+
+        @auth
+            @if(Auth::user()->is_admin)
+                <!-- Add Project Button -->
+                <a href="{{ route('projects.create') }}" class="button add-button">Add Project</a>
+            @endif
+        @endauth
+    </div>
 </header>
 <main>
+    <!-- Filter by Tags -->
+    <div class="filter-tags">
+        <h3>Filter by Tags:</h3>
+        <ul>
+            @foreach ($tags as $tag)
+                <li>
+                    <a href="{{ route('projects.index', ['tag' => $tag->id]) }}" class="tag-filter">{{ $tag->name }}</a>
+                </li>
+            @endforeach
+        </ul>
+    </div>
+
+    <!-- List of Projects -->
     <ul>
         @foreach ($projects as $project)
             <li>
@@ -20,6 +44,13 @@
                 @if ($project->image)
                     <img src="{{ asset('storage/' . $project->image) }}" alt="{{ $project->title }}" class="project-img">
                 @endif
+
+                <!-- Display Tags for Each Project -->
+                <div class="project-tags">
+                    @foreach ($project->tags as $tag)
+                        <span class="tag">{{ $tag->name }}</span>
+                    @endforeach
+                </div>
 
                 <!-- Buttons for Edit and Delete (Visible to Admins) -->
                 @if(Auth::check() && Auth::user()->is_admin)
@@ -40,5 +71,6 @@
         @endforeach
     </ul>
 </main>
+<script src="{{ asset('js/projects_index.js') }}"></script>
 </body>
 </html>

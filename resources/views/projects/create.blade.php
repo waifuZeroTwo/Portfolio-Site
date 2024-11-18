@@ -38,6 +38,16 @@
             <label for="image">Image:</label>
             <input type="file" id="image" name="image">
         </div>
+        <div>
+            <label for="tags">Select Tags:</label>
+            <select name="tags[]" id="tags" multiple>
+                @foreach ($tags as $tag)
+                    <option value="{{ $tag->id }}" {{ in_array($tag->id, old('tags', [])) ? 'selected' : '' }}>
+                        {{ $tag->name }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
         <button type="submit">Add Project</button>
     </form>
 </main>
